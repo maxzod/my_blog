@@ -1,0 +1,26 @@
+name: my_blog
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  auto_route: ^1.0.0-beta.7
+  provider:
+  google_fonts:
+  font_awesome_flutter: ^8.11.0
+  url_launcher: ^5.7.10
+  url_launcher_web:
+  timeago: ^2.0.29
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  auto_route_generator:
+  build_runner:
+flutter:
+  uses-material-design: true
