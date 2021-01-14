@@ -10,8 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   auto_route: ^1.0.0-beta.7
-  provider:
-  google_fonts:
   font_awesome_flutter: ^8.11.0
   url_launcher: ^5.7.10
   url_launcher_web:
