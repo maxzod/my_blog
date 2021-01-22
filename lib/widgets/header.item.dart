@@ -19,7 +19,9 @@ class HeaderItem extends StatelessWidget {
           horizontal: MediaQuery.of(context).size.width * 0.01),
       child: OutlineButton(
         hoverColor: BlogColors.buttonsColor,
-        onPressed: context.route.name == route ? () {} : onClick,
+        onPressed: () {
+          if (context.route.name != route) onClick();
+        },
         child: Text(title.toUpperCase()),
       ),
     );

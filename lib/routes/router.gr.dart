@@ -10,6 +10,7 @@ import '../pages/blog.page.dart' as _i3;
 import '../pages/about.page.dart' as _i4;
 import '../pages/contact.page.dart' as _i5;
 import '../pages/post.page.dart' as _i6;
+import '../pages/not.found.page.dart' as _i7;
 
 class BlogRouter extends _i1.RootStackRouter {
   BlogRouter();
@@ -31,6 +32,9 @@ class BlogRouter extends _i1.RootStackRouter {
     BlogPostRoute.name: (entry) {
       var route = entry.routeData.as<BlogPostRoute>();
       return _i1.MaterialPageX(entry: entry, child: _i6.BlogPostPage(route.id));
+    },
+    NotFoundRoute.name: (entry) {
+      return _i1.MaterialPageX(entry: entry, child: _i7.NotFoundPage());
     }
   };
 
@@ -48,7 +52,9 @@ class BlogRouter extends _i1.RootStackRouter {
             routeBuilder: (match) => ContactRoute.fromMatch(match)),
         _i1.RouteConfig<BlogPostRoute>(BlogPostRoute.name,
             path: '/posts/:id',
-            routeBuilder: (match) => BlogPostRoute.fromMatch(match))
+            routeBuilder: (match) => BlogPostRoute.fromMatch(match)),
+        _i1.RouteConfig<NotFoundRoute>(NotFoundRoute.name,
+            path: '*', routeBuilder: (match) => NotFoundRoute.fromMatch(match))
       ];
 }
 
@@ -95,4 +101,12 @@ class BlogPostRoute extends _i1.PageRouteInfo {
   final int id;
 
   static const String name = 'BlogPostRoute';
+}
+
+class NotFoundRoute extends _i1.PageRouteInfo {
+  const NotFoundRoute() : super(name, path: '*');
+
+  NotFoundRoute.fromMatch(_i1.RouteMatch match) : super.fromMatch(match);
+
+  static const String name = 'NotFoundRoute';
 }

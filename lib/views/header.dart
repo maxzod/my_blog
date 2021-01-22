@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_blog/config/colors.dart';
-import 'package:my_blog/config/config.dart';
+import 'package:my_blog/config/env.dart';
 import 'package:my_blog/routes/router.gr.dart';
 import 'package:my_blog/widgets/header.item.dart';
 import 'package:auto_route/auto_route.dart';
@@ -20,7 +20,7 @@ class BlogHeader extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              Config.BLOG_NAME,
+              BlogConfig.BLOG_NAME,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w700,
@@ -32,21 +32,21 @@ class BlogHeader extends StatelessWidget {
             HeaderItem(
                 route: HomeRoute.name,
                 title: 'home',
-                onClick: () => context.router.push(HomeRoute())),
+                onClick: () => context.router.replace(HomeRoute())),
             HeaderItem(
               route: BlogRoute.name,
               title: 'blog',
-              onClick: () => context.router.push(BlogRoute()),
+              onClick: () => context.router.replace(BlogRoute()),
             ),
             HeaderItem(
               route: AboutRoute.name,
               title: 'about',
-              onClick: () => context.router.push(AboutRoute()),
+              onClick: () => context.router.replace(AboutRoute()),
             ),
             HeaderItem(
               route: ContactRoute.name,
               title: 'contact',
-              onClick: () => context.router.push(ContactRoute()),
+              onClick: () => context.router.replace(ContactRoute()),
             ),
           ],
         ),

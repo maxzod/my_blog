@@ -1,22 +1,33 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_blog/config/colors.dart';
-import 'package:my_blog/config/config.dart';
+import 'package:my_blog/config/env.dart';
+import 'package:my_blog/config/page.transation.dart';
 import 'package:my_blog/routes/router.gr.dart';
+import 'package:url_strategy/url_strategy.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  setPathUrlStrategy();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   final _router = BlogRouter();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: BlogColors.backgroudColor,
+        // disable  navigation animation for all devices
+        pageTransitionsTheme: NoTransitionsOnWeb(),
         // textTheme: GoogleFonts.cairoTextTheme()
       ),
       debugShowCheckedModeBanner: false,
-      title: Config.BLOG_NAME,
+      title: BlogConfig.BLOG_NAME,
       routerDelegate: _router.delegate(),
       routeInformationParser: _router.defaultRouteParser(),
     );

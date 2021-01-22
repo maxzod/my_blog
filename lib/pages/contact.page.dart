@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_blog/config/colors.dart';
 import 'package:my_blog/views/page.template.dart';
-import 'package:my_blog/widgets/main_text_field.dart';
 
 class ContactPage extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
@@ -23,36 +21,37 @@ class ContactPage extends StatelessWidget {
               horizontal: size.width * 0.03,
               vertical: size.height * 0.05,
             ),
-            child: Column(
-              children: [
-                MainInputField(
-                  controller: nameController,
-                  labelText: 'name',
-                ),
-                MainInputField(
-                  controller: emailController,
-                  labelText: 'email',
-                ),
-                MainInputField(
-                  controller: nameController,
-                  labelText: 'message',
-                  minLines: 5,
-                  keyboardType: TextInputType.multiline,
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: MaterialButton(
-                    onPressed: () {},
-                    color: BlogColors.buttonsColor,
-                    child: Text(
-                      'SEND',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                )
-              ],
-            ),
+            // child:
+            //  Column(
+            //   children: [
+            //     MainInputField(
+            //       controller: nameController,
+            //       labelText: 'name',
+            //     ),
+            //     MainInputField(
+            //       controller: emailController,
+            //       labelText: 'email',
+            //     ),
+            //     MainInputField(
+            //       controller: nameController,
+            //       labelText: 'message',
+            //       minLines: 5,
+            //       keyboardType: TextInputType.multiline,
+            //     ),
+            //     Align(
+            //       alignment: Alignment.bottomRight,
+            //       child: MaterialButton(
+            //         onPressed: () {},
+            //         color: BlogColors.buttonsColor,
+            //         child: Text(
+            //           'SEND',
+            //           style:
+            //               TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            //         ),
+            //       ),
+            //     )
+            //   ],
+            // ),
           ),
         ),
       ),
