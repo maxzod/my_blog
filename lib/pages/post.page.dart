@@ -14,7 +14,7 @@ class BlogPostPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return BlogPageTemplate(
       body: FutureBuilder(
-        future: rootBundle.loadString('posts/$id.md'),
+        future: rootBundle.loadString('/assets/posts/$id.md'),
         builder: (_, AsyncSnapshot snap) {
           if (snap.hasData) {
             return Markdown(
