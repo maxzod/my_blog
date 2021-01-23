@@ -3,6 +3,7 @@ import 'package:my_blog/models/post.dart';
 abstract class BlogConfig {
   static const LOGO_URL = '';
   static const BLOG_NAME = 'AHMED MASOUD';
+  // static const BLOG_NAME = 'Queen 👑';
   static const SUPPORTED_LOCALES = [
     'en',
   ];

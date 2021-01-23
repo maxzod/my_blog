@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
     return BlogPageTemplate(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             'Welcome to my blog .' +
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
                 "i'm a mobile app Developer" +
                 '\n' +
                 'I hope you can find something useful in this Blog . ',
+            textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
           ),

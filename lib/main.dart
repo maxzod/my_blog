@@ -1,15 +1,24 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:my_blog/config/colors.dart';
 import 'package:my_blog/config/env.dart';
 import 'package:my_blog/config/page.transation.dart';
 import 'package:my_blog/routes/router.gr.dart';
-import 'package:url_strategy/url_strategy.dart';
+// import 'package:url_strategy/url_strategy.dart';
+
+void removeHash() {
+  bool isWeb = true;
+  if (isWeb) {
+    setUrlStrategy(PathUrlStrategy());
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  setPathUrlStrategy();
+  // await Firebase.initializeApp();
+  removeHash();
+  // setPathUrlStrategy();
   runApp(MyApp());
 }
 
